@@ -1,22 +1,37 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoIosMenu } from "react-icons/io";
 
-import Logo from "../logo/Logo";
+import Logo from "../../logo/Logo";
 import Navigators from "./Navigators";
 import PersonalNavigators from "./PersonalNavigators";
 import DropdownMenu from "./DropdownMenu";
-import { motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
-const Navigation = ({ scrollYProgress }) => {
+const Navigation = () => {
   const [expandedMenu, setExpandedMenu] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const position = window.scrollY;
+      setScrollPosition(position);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+  }, []);
+
+  const searchBarHandler = () => {
+    setSearchBarVisible((prevState) => !prevState);
+  };
+
   return (
     <>
-      <div className="sticky top-0 w-screen z-20 bg-light-white">
+      <div
+        className={`sticky top-0 w-screen z-20 ${
+          scrollPosition > 0 ? "bg-gray" : "bg-light-white"
+        }`}
+      >
         <div className="grid grid-cols-3 tablet:grid-cols-2 items-center h-12 m-auto w-full mac:max-w-screen-mac px-5">
-          <motion.div
-            style={{ scaleX: scrollYProgress }}
-            className="fixed top-0 left-0 right-0 h-12 bg-gray -z-50 origin-left "
-          />
           <button
             className="tablet:hidden hover:text-orange"
             onClick={() => {
@@ -30,11 +45,11 @@ const Navigation = ({ scrollYProgress }) => {
             <Navigators />
           </div>
           <div className="justify-self-end">
-            <PersonalNavigators />
+            <PersonalNavigators onToggleSearchBar={searchBarHandler} />
           </div>
         </div>
       </div>
-      <DropdownMenu expandedMenu={expandedMenu} />
+      <AnimatePresence>{expandedMenu && <DropdownMenu />}</AnimatePresence>
     </>
   );
 };

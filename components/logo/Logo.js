@@ -6,7 +6,7 @@ const Logo = () => {
     <span>
       <Link href="/">
         <span
-          className={`${cinzel.className} font-bold text-xl tablet:text-2xl`}
+          className={`${cinzel.className} font-bold text-xl tablet:text-2xl `}
         >
           Bedtime Tails
         </span>
