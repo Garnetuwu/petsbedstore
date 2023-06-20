@@ -6,10 +6,12 @@ import { notoSans } from "@/styles/fonts";
 const LayoutWrapper = ({ children }) => {
   return (
     <div
-      className={`bg-light-white flex min-h-screen  flex-col items-center justify-between ${notoSans.className}`}
+      className={`bg-light-white flex w-screen min-h-screen flex-col items-center justify-between ${notoSans.className}`}
     >
-      <Navigation />
-      <div className="bg-light-white h-[200vh]">{children}</div>
+      <div>
+        <Navigation />
+        <div className="w-screen"> {children}</div>
+      </div>
       <Footer />
     </div>
   );

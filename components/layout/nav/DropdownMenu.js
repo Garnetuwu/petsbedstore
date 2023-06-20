@@ -7,7 +7,7 @@ const DropdownMenu = () => {
   const router = useRouter();
   return (
     <motion.div
-      className="fixed left-0 right-0 top-12 z-10"
+      className="fixed left-0 right-0 top-25 z-10"
       initial={{ y: -200 }}
       animate={{ y: 0 }}
       exit={{ y: -200 }}

@@ -6,9 +6,11 @@ import Navigators from "./Navigators";
 import PersonalNavigators from "./PersonalNavigators";
 import DropdownMenu from "./DropdownMenu";
 import { AnimatePresence } from "framer-motion";
+import Announcement from "../Announcement";
 
 const Navigation = () => {
   const [expandedMenu, setExpandedMenu] = useState(false);
+  const [showAnnouncement, setShowAnnouncement] = useState(true);
   const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
@@ -26,12 +28,15 @@ const Navigation = () => {
 
   return (
     <>
+      {showAnnouncement && (
+        <Announcement onRemove={() => setShowAnnouncement(false)} />
+      )}
       <div
         className={`sticky top-0 w-screen z-20 ${
           scrollPosition > 0 ? "bg-gray" : "bg-light-white"
         }`}
       >
-        <div className="grid grid-cols-3 tablet:grid-cols-2 items-center h-12 m-auto w-full mac:max-w-screen-mac px-5">
+        <div className="grid grid-cols-3 tablet:grid-cols-2 items-center h-12 px-5 m-auto mac:container">
           <button
             className="tablet:hidden hover:text-orange"
             onClick={() => {

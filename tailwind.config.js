@@ -14,6 +14,9 @@ module.exports = {
       mac: "1728px",
     },
     extend: {
+      backgroundImage: {
+        "dog-banner": "url('../public/banner.jpg')",
+      },
       colors: {
         "light-white": "#FFFBF6",
         nude: "#F1CDAB",

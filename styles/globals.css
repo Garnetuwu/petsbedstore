@@ -21,5 +21,20 @@ body {
   color: rgb(var(--foreground-rgb));
 }
 
+@layer base {
+  h1 {
+    @apply text-[30px] phone:text-[35px] font-bold desktop:text-[40px];
+  }
+}
+
 @layer components {
+  .container {
+    @apply max-w-screen-mac m-auto;
+  }
+}
+
+@layer utilities {
+  .buttonInvert {
+    @apply bg-blue border-black shadow-md text-light-white shadow-black/20;
+  }
 }
