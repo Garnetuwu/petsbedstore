@@ -12,7 +12,7 @@ const Collections = () => {
 
   useEffect(() => {
     if (!query.category) router.replace("/shop");
-  }, [query]);
+  }, [router, query]);
 
   return (
     <LayoutWrapper>

@@ -4,6 +4,7 @@ import GridCard from "@/components/UI/GridCard";
 import Input from "@/components/UI/Input";
 import Container from "@/components/UI/Container";
 import { useRef } from "react";
+import Image from "next/image";
 
 const MailSub = () => {
   const mailRef = useRef();
@@ -11,7 +12,9 @@ const MailSub = () => {
     <Card className="bg-blue">
       <Container>
         <GridCard className=" text-white p-7 gap-5 max-tablet:grid-cols-1">
-          <img
+          <Image
+            width={1500}
+            height={220}
             src="/assets/mail_subscription.png"
             className="scale-75  max-h-[220px]"
           />

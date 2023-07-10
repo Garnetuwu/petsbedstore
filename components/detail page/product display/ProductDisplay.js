@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ProductPreview from "./ProductPreview";
+import Image from "next/image";
 
 const ProductDisplay = ({ images }) => {
   const [selectedImage, setSelectedImage] = useState(images[0]);
@@ -10,7 +11,9 @@ const ProductDisplay = ({ images }) => {
 
   return (
     <div className="flex flex-col gap-3 py-3">
-      <img
+      <Image
+        width={1600}
+        height={650}
         src={selectedImage}
         alt="main image"
         className=" object-cover aspect-square max-h-[650px]"

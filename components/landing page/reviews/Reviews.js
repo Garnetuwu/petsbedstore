@@ -5,7 +5,7 @@ const Reviews = () => {
   return (
     <Card className="flex-col p-5 mac:container">
       <h2 className="text-center px-10">
-        Don't take our word for it! Read customer reviews!
+        Don&lsquo;t take our word for it! Read customer reviews!
       </h2>
       <ReviewSwiper />
     </Card>

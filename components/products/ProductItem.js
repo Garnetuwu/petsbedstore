@@ -1,13 +1,17 @@
 import { dmSerif } from "@/styles/fonts";
+import Image from "next/image";
 import Link from "next/link";
 
 const ProductItem = ({ image, name, minPrice, id }) => {
   return (
     <Link href={`/shop/collections/${id}`}>
       <div className="rounded-md overflow-hidden">
-        <img
+        <Image
+          width={700}
+          height={420}
           src={image}
-          className="w-full h-[420px] object-cover transition-transform ease-in duration-200 hover:scale-125 hover:opacity-50"
+          alt={name}
+          className="w-full h-[420px] object-cover  transition-transform ease-in duration-200 hover:scale-125 hover:opacity-50"
         />
       </div>
       <h3 className={`${dmSerif.className} italic text-center pt-2`}>{name}</h3>

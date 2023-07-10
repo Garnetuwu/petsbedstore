@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const OptionSegment = ({
   title,
   content,
@@ -52,7 +54,12 @@ const OptionSegment = ({
                 selectedItem.name === el.name ? "outline outline-blue" : null
               }`}
             >
-              <img src={`/assets/materials/${el.img}`} alt={el.name} />
+              <Image
+                width={50}
+                height={50}
+                src={`/assets/materials/${el.img}`}
+                alt={el.name}
+              />
             </button>
           ))}
 

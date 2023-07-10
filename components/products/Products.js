@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { DUMMY_PRODUCTS } from "@/utils/products";
 import ProductItem from "./ProductItem";
-import Link from "next/link";
 import Button from "../UI/Button";
 import BreadLink from "../../BreadLink";
 
@@ -50,7 +49,7 @@ const Products = ({ filter }) => {
           products.length > 0 &&
           products.map((product) => (
             <ProductItem
-              image={product.img}
+              image={product.img[0]}
               name={product.name}
               minPrice={product.price}
               key={product.id}
