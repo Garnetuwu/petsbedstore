@@ -11,13 +11,14 @@ const SearchNavigator = () => {
       <AnimatePresence>
         {expandedSearch && (
           <motion.div
-            className="absolute z-10 left-[10%] right-[10%] top-12 max-tablet:hidden"
+            className="absolute z-10 left-[10%] right-[10%] top-0 bg-light-white border-4 border-black/50  shadow-md p-10 rounded-sm max-tablet:hidden"
             initial={{ y: -100 }}
             animate={{ y: 0 }}
-            exit={{ y: -100 }}
+            exit={{ y: -200 }}
             transition={{ duration: 0.3 }}
           >
-            <SearchBar className="h-15 border-b shadow-md shadow-nude border-b-orange" />
+            <h2 className="text-center pb-5">Search product</h2>
+            <SearchBar className="border shadow-md shadow-black/30 border-black rounded-md" />
           </motion.div>
         )}
       </AnimatePresence>

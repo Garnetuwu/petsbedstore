@@ -1,19 +1,19 @@
 import Navigation from "./nav/Navigation";
-import Footer from "./Footer";
+import Footer from "./footer/Footer";
 
-import { notoSans } from "@/styles/fonts";
+import { dmSerif, notoSans } from "@/styles/fonts";
 
 const LayoutWrapper = ({ children }) => {
   return (
-    <div
-      className={`bg-light-white flex w-screen min-h-screen flex-col items-center justify-between ${notoSans.className}`}
+    <main
+      className={`bg-light-white flex max-w-screen min-h-screen flex-col items-center justify-between ${dmSerif.variable} ${notoSans.className}`}
     >
       <div>
         <Navigation />
-        <div className="w-screen"> {children}</div>
+        <div className="w-screen overflow-hidden"> {children}</div>
       </div>
       <Footer />
-    </div>
+    </main>
   );
 };
 

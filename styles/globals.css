@@ -19,22 +19,73 @@
 
 body {
   color: rgb(var(--foreground-rgb));
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 @layer base {
   h1 {
-    @apply text-[30px] phone:text-[35px] font-bold desktop:text-[40px];
+    @apply text-[25px] phone:text-[30px] desktop:text-[40px] font-serif;
+  }
+  h2 {
+    @apply text-[20px] phone:text-[25px] desktop:text-[30px] font-serif;
+  }
+  h3 {
+    @apply text-[17px] phone:text-[20px] desktop:text-[23px];
+  }
+  p {
+    @apply text-[15px] desktop:text-[17px];
   }
 }
 
 @layer components {
   .container {
-    @apply max-w-screen-mac m-auto;
+    @apply max-w-screen-mac mx-auto;
+  }
+
+  .mySwiper {
+    @apply w-[90vw] h-[320px] mt-[20px];
+  }
+  .reviewSlide {
+    @apply max-w-[300px] max-h-[300px] p-5 rounded-md shadow-md;
+  }
+
+  .stack-1 {
+    grid-row: 2;
+    grid-column: 1 / span 7;
+    z-index: 1;
+  }
+
+  .stack-2 {
+    grid-column: 5 / -1;
+    grid-row: 2;
+  }
+
+  .special-feature {
+    @apply grid grid-cols-3 grid-flow-row text-center gap-3 text-sm font-light list-image-dot;
+  }
+  .special-feature li {
+    @apply m-2;
   }
 }
 
 @layer utilities {
-  .buttonInvert {
-    @apply bg-blue border-black shadow-md text-light-white shadow-black/20;
+  .buttonFill {
+    @apply bg-black border-black text-light-white;
+  }
+
+  .buttonFillInvert {
+    @apply bg-light-white border-white text-black;
+  }
+
+  .animatedColor {
+    @apply transition-colors ease-in-out;
+  }
+  .trapezoid {
+    clip-path: polygon(0 0, 100% 0, 57% 100%, 0% 100%);
+  }
+  .trapezoid-reverse {
+    clip-path: polygon(37% 0, 100% 0, 100% 100%, 0% 100%);
   }
 }

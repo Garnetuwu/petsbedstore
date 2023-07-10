@@ -1,6 +1,6 @@
 const Card = ({ className, children }) => {
   return (
-    <div className={`bg-nude mac:container m-auto  ${className}`}>
+    <div className={`m-auto flex justify-center items-center ${className}`}>
       {children}
     </div>
   );

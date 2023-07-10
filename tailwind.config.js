@@ -14,8 +14,19 @@ module.exports = {
       mac: "1728px",
     },
     extend: {
+      fontFamily: {
+        serif: ["var(--font-dmSerif)"],
+      },
       backgroundImage: {
-        "dog-banner": "url('../public/banner.jpg')",
+        banner: "url('../public/images/cat_and_dog.jpg')",
+        deal1: "url('../public/images/Deal1.png')",
+        deal2: "url('../public/images/Deal2.png')",
+        specialBuilds: "url('../public/images/special_builds.png')",
+        nextButton: "url('../public/assets/Arrow right.svg')",
+        prevButton: "url('../public/assets/Arrow left.svg')",
+      },
+      listStyleImage: {
+        dot: "url('../public/assets/yellow-dot.png')",
       },
       colors: {
         "light-white": "#FFFBF6",
@@ -24,6 +35,7 @@ module.exports = {
         blue: "#5779A7",
         purple: "#464F70",
         gray: "#9CACC1",
+        grey: "#767676",
         "dark-color": "1F2332",
       },
     },
