@@ -5,11 +5,11 @@ const ReviewSwiperItem = ({ name, icon, review, orders }) => {
   return (
     <div className="flex flex-col justify-between gap-3 p-3 h-[250px]">
       <div>
-        <div className="flex gap-5 ">
+        <div className="flex gap-5 justify-start items-center ">
           <Image
             width={100}
             height={100}
-            className="object-none"
+            className="w-[80px] h-[80px]"
             src={icon.src}
             alt={name}
           />
