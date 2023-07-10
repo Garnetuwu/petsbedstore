@@ -35,7 +35,7 @@ export function getStaticPaths() {
       },
     ],
 
-    fallback: true,
+    fallback: "blocking",
   };
 }
 
