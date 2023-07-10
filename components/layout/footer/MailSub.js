@@ -11,13 +11,14 @@ const MailSub = () => {
   return (
     <Card className="bg-blue">
       <Container>
-        <GridCard className=" text-white p-7 gap-5 max-tablet:grid-cols-1">
+        <GridCard className=" text-white p-7 gap-5 max-tablet:grid-cols-1 ">
           <Image
             width={1500}
             height={220}
             src="/assets/mail_subscription.png"
-            className="scale-75  max-h-[220px]"
+            className="max-h-[200px] object-contain place-self-center"
           />
+
           <form
             action="/"
             className="flex flex-col items-end gap-3 max-tablet:items-center"
@@ -26,7 +27,7 @@ const MailSub = () => {
             <Input
               type="text"
               ref={mailRef}
-              className="bg-light-white text-black h-8 w-[60%] max-desktop:w-[90%]"
+              className="bg-light-white text-black h-8 w-[90%] tablet:w-[60%]"
             />
             <p className="font-light text-right max-tablet:text-center">
               Get free pictures of cute cats and dogs as well as the latest
