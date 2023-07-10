@@ -6,7 +6,7 @@ import { dmSerif, notoSans } from "@/styles/fonts";
 const LayoutWrapper = ({ children }) => {
   return (
     <main
-      className={`bg-light-white flex max-w-screen min-h-screen flex-col items-center justify-between ${dmSerif.variable} ${notoSans.className}`}
+      className={`bg-light-white text-black flex max-w-screen min-h-screen flex-col items-center justify-between ${dmSerif.variable} ${notoSans.className}`}
     >
       <div>
         <Navigation />

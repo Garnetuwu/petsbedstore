@@ -4,7 +4,7 @@ import Card from "@/components/UI/Card";
 
 const Deals = () => {
   return (
-    <Card className=" text-black p-10 bg-nude">
+    <Card className="p-10 bg-nude">
       <div className="mac:container grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 h-[400px] tablet:h-[200px] gap-3">
         <div className="flex flex-col gap-3 px-5 items-center tablet:items-start place-self-center">
           <h2>Get a great deal today!</h2>
