@@ -11,14 +11,14 @@ const lists = [
   },
   {
     component: <IoCartOutline size="1.5em" />,
-    title: "shopping-cart",
+    title: "/shopping-cart",
     dropdown: false,
     link: true,
   },
   ,
   {
     component: <IoPersonCircleOutline size="1.5em" />,
-    title: "user-center",
+    title: "/user-center",
     dropdown: true,
     link: true,
   },

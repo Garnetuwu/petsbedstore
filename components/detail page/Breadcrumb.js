@@ -1,4 +1,4 @@
-import BreadLink from "../../BreadLink";
+import BreadLink from "../UI/BreadLink";
 
 const Breadcrumb = ({ name, category }) => {
   return (

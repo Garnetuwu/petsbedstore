@@ -68,6 +68,9 @@ body {
   .special-feature li {
     @apply m-2;
   }
+  .container-shadow {
+    @apply shadow-md;
+  }
 }
 
 @layer utilities {

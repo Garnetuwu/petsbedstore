@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { DUMMY_PRODUCTS } from "@/utils/products";
 import ProductItem from "./ProductItem";
 import Button from "../UI/Button";
-import BreadLink from "../../BreadLink";
+import BreadLink from "../UI/BreadLink";
 
 const Products = ({ filter }) => {
   const [products, setProducts] = useState(DUMMY_PRODUCTS);

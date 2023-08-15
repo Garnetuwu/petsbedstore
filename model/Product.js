@@ -1,12 +1,14 @@
 class Product {
   constructor(object) {
     (this.name = object.name),
+      (this.itemId = object.itemId),
+      (this.image = object.image),
       (this.minLength = object.minLength),
       (this.length = object.length),
       (this.width = object.width),
       (this.minWidth = object.minWidth),
-      (this.amount = object.amount);
-    (this.baseMaterial = object.baseMaterial),
+      (this.amount = object.amount),
+      (this.baseMaterial = object.baseMaterial),
       (this.coverMaterial = object.coverMaterial),
       (this.innerMaterial = object.innerMaterial),
       (this.originalPrice = object.originalPrice),

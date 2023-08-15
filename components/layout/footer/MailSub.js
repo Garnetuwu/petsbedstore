@@ -15,6 +15,7 @@ const MailSub = () => {
           <Image
             width={1500}
             height={220}
+            alt="mail"
             src="/assets/mail_subscription.png"
             className="max-h-[200px] object-contain place-self-center"
           />

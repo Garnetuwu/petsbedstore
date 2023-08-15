@@ -14,6 +14,8 @@ const ProductDetailMain = ({ product }) => {
         length={product.length}
         width={product.width}
         price={product.price}
+        image={product.img[0]}
+        id={product.id}
       />
     </GridCard>
   );

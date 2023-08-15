@@ -21,9 +21,7 @@ const Navigation = () => {
       {showAnnouncement && (
         <Announcement onRemove={() => setShowAnnouncement(false)} />
       )}
-      <div
-        className={`sticky top-0 w-screen z-20 bg-light-white shadow-md shadow-slate/50`}
-      >
+      <div className="sticky top-0 w-screen z-20 bg-light-white container-shadow">
         <div className="grid grid-cols-3 tablet:grid-cols-2 items-center h-12 px-5 m-auto mac:container">
           <button
             className="tablet:hidden hover:text-orange"

@@ -1,12 +1,14 @@
-import { useEffect, useReducer } from "react";
+import { useReducer } from "react";
 import { dmSerif } from "@/styles/fonts";
 
 import OptionSegment from "./OptionSegment";
-import Purchase from "./Purchase";
+import PriceQuantity from "./PriceQuantity";
 import FiveStar from "../../UI/FiveStar";
+import Button from "@/components/UI/Button";
 
 import Product from "@/model/Product";
 import { DUMMY_MATERIALS } from "@/utils/products";
+import { useCartContext } from "@/store/cartContext";
 
 const materialList = [
   { title: "base", content: DUMMY_MATERIALS.base },
@@ -60,9 +62,15 @@ const ProductPurchaseOptions = ({
   width,
   basicMaterials,
   price,
+  image,
+  id,
 }) => {
+  const { onAddToCart } = useCartContext();
+
   const initialState = new Product({
     name,
+    image,
+    itemId: id,
     minLength: length[0],
     length: length[0],
     minWidth: width[0],
@@ -80,14 +88,21 @@ const ProductPurchaseOptions = ({
     )[0],
   });
 
-  const [productState, dispatch] = useReducer(productReducer, initialState);
+  const [productState, dispatchProduct] = useReducer(
+    productReducer,
+    initialState
+  );
 
-  useEffect(() => {
-    console.log(productState);
-  }, [productState]);
+  const submitHandler = (e) => {
+    e.preventDefault();
+    onAddToCart(productState);
+  };
 
   return (
-    <div className="flex flex-col items-center justify-start overflow-y-auto px-10 gap-7 max-laptop:mt-5">
+    <form
+      onSubmit={submitHandler}
+      className="flex flex-col items-center justify-start overflow-y-auto px-10 gap-7 max-laptop:mt-5"
+    >
       <div>
         <h2 className={`italic ${dmSerif.className} text-center`}>{name}</h2>
         <FiveStar />
@@ -98,7 +113,7 @@ const ProductPurchaseOptions = ({
           title={list.title}
           content={list.content}
           selectedItem={productState[`${list.title}Material`]}
-          dispatch={dispatch}
+          dispatch={dispatchProduct}
           material
         />
       ))}
@@ -106,20 +121,23 @@ const ProductPurchaseOptions = ({
         title="length"
         content={length}
         selectedItem={productState.length}
-        dispatch={dispatch}
+        dispatch={dispatchProduct}
       />
       <OptionSegment
         title="width"
         content={width}
         selectedItem={productState.width}
-        dispatch={dispatch}
+        dispatch={dispatchProduct}
       />
-      <Purchase
+      <PriceQuantity
         price={productState.finalPrice}
         amount={productState.amount}
-        dispatch={dispatch}
+        dispatch={dispatchProduct}
       />
-    </div>
+      <Button type="submit" className="border-grey rounded-md hover:buttonFill">
+        Add to Shopping Cart
+      </Button>
+    </form>
   );
 };
 

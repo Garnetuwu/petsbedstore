@@ -3,7 +3,7 @@ import { dmSerif } from "@/styles/fonts";
 const buttonStyle =
   "border border-black px-2 hover:bg-black hover:text-white disabled:bg-grey disabled:text-black";
 
-const Purchase = ({ price, amount, dispatch }) => {
+const PriceQuantity = ({ price, amount, dispatch }) => {
   const addOneHandler = () => {
     dispatch({ type: "CHANGE_AMOUNT", payload: amount - 1 });
   };
@@ -17,6 +17,7 @@ const Purchase = ({ price, amount, dispatch }) => {
       <span className="font-light tracking-wider">Quantity</span>
       <div className="grid grid-cols-4">
         <button
+          type="button"
           disabled={amount <= 1}
           className={buttonStyle}
           onClick={addOneHandler}
@@ -25,6 +26,7 @@ const Purchase = ({ price, amount, dispatch }) => {
         </button>
         <span className="border-y text-center col-span-2">{amount}</span>
         <button
+          type="button"
           disabled={amount >= 5}
           className={buttonStyle}
           onClick={removeOneHandler}
@@ -36,4 +38,4 @@ const Purchase = ({ price, amount, dispatch }) => {
   );
 };
 
-export default Purchase;
+export default PriceQuantity;

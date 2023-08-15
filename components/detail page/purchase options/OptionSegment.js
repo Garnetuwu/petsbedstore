@@ -46,6 +46,7 @@ const OptionSegment = ({
         {material &&
           content.map((el) => (
             <button
+              type="button"
               key={el.id}
               onClick={() => {
                 updateItemHandler(el);
@@ -67,6 +68,7 @@ const OptionSegment = ({
           sizes.map((size) => (
             <button
               key={size}
+              type="button"
               onClick={() => updateItemHandler(size)}
               className={`rounded-md border w-[65px] font-light ${
                 selectedItem === size ? "border-black text-black" : "text-gray"
